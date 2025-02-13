@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-    …
 document.getElementById('downloadForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const name = document.getElementById('name').value;
@@ -17,3 +14,4 @@ document.getElementById('downloadForm').addEventListener('submit', function(even
     document.getElementById('message').style.display = 'block';
     document.getElementById('downloadLink').href = 'BC-7500 CRP.PDF'; // Replace with actual PDF path
 });
+ 
