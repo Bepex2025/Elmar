@@ -1,0 +1,16 @@
+document.getElementById('downloadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const organization = document.getElementById('organization').value;
+    
+    fetch('https://script.google.com/macros/s/AKfycbza0Rd0j8_OQ8xbaZeFybR9b_dRd6-qCkCTQ-7EjYoaQllgAawR2Kb8tydo0nG0F4lESQ/exec', {  // Replace with your actual Web App URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, organization })
+    }).then(response => response.text())
+      .then(data => console.log(data));
+
+    document.getElementById('message').style.display = 'block';
+    document.getElementById('downloadLink').href = 'yourfile.pdf'; // Replace with actual PDF path
+});
